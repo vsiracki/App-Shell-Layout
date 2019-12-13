@@ -1,11 +1,26 @@
-.layout {
-  margin: 0px;
-  // flex-flow: column wrap;
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-.content {
-  flex: 1;
-  margin: 0.5em;
-}
+@import '../styles/mixin.scss';
+
+
+  .layout {
+    margin: 0px;
+    // flex-flow: column wrap;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+
+  }
+  .content {
+    flex: 1;
+    margin: 0.5em;
+  }
+  .footer {
+    padding: 50px;
+    @include footer;
+    color: white;
+    // background-color: $primary;
+  }
+
+
+
+
+

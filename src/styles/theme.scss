@@ -79,9 +79,9 @@ $app-accent: (
 $primary:       mat-palette($app-primary, 200);
 $accent:        mat-palette($app-accent, 400);
 $warn:          mat-palette($mat-deep-orange);
-$light-theme:   mat-light-theme($primary, $accent, $warn);
+$App-theme:   mat-light-theme($primary, $accent, $warn);
 
 
 
 
-@include angular-material-theme($light-theme);
+@include angular-material-theme($App-theme);
