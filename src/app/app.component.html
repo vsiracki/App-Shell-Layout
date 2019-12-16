@@ -1,19 +1,27 @@
-<div class="layout">
+<!-- Body container wraper! begin -->
+    <div class="layout">
 
-    <div class="navigation">
-        Navigation goes here
+        <!-- Navigation content goes here! begin-->
+        <div class="navigation">
+          <app-navigation></app-navigation>
+        </div>
+        <!-- Navigation content goes here! end-->
+
+
+        <div class="content">
+
+          <!--Web Content goes here! begin-->
+          Web Content goes here!
+          <router-outlet></router-outlet>
+          <!--Web Content goes here! end-->
+
+        </div>
+
+        <!-- Footer is here  begin-->
+        <div class="footer">
+          <app-footer></app-footer>
+        </div>
+        <!-- Footer is here end-->
     </div>
+<!-- Body container wraper! end -->
 
-    <div class="content">
-            Some Cotent
-          <div>
-              Another  Content
-          </div>
-      <router-outlet></router-outlet>
-    </div>
-
-    <div class="footer">
-      Footer goes here
-    </div>
-
-</div>
