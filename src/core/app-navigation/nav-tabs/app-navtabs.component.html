@@ -1,3 +1,14 @@
-<div>
-  <p>Navtabs Content goes here!</p>
+<div class="navtabs-container" >
+  <nav mat-tab-nav-bar  fxFlex fxLayout fxLayoutAlign="center center"  mat-align-tabs>
+    <span class='toolbar-flex' ></span>
+              <a mat-tab-link routerLink="#" class="link"
+                 [routerLinkActive]="activeClass"
+                ><mat-icon style="margin: 8px;">home</mat-icon>
+                <label class="text">Home</label>
+              </a>
+
+
+
+        <span class='toolbar-flex'></span>
+  </nav>
 </div>

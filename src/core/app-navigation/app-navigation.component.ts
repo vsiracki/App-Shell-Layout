@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material';
 
 
 @Component({
@@ -9,6 +10,19 @@ import { Component } from '@angular/core';
 export class NavigationComponent {
 
 
+  @ViewChild('sidenav',{ static: false }) public sidenav: MatSidenav;
+
+  @Output() closeNavigation = new EventEmitter();
+
+  toggleActive:boolean = false;
+
+  constructor() {}
+
+
+
+  ngOnInit(): void {
+
+  }
 
 
 }

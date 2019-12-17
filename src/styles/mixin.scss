@@ -1,10 +1,15 @@
 @import 'theme';
 
 
-@mixin primary-color {
+@mixin primary-text-color {
   $primary-color: map-get($primary, 800);
   color: $primary-color;
 }
+@mixin primary-background-color {
+  $primary-color: map-get($primary, 800);
+  background-color: $primary-color;
+}
+
 @mixin primary-background-contrast-color {
   $primary-color: map-get($primary, 400);
   $font-color: map-get(map-get($primary, contrast), 400);
@@ -17,9 +22,9 @@
 }
 @mixin accent-background-color {
   $accent-color: map-get($accent, 700);
-  $accent-font-color: map-get(map-get($accent, contrast), 700);
+  $accent-font-color: map-get(map-get($accent, contrast), 300);
   background-color: $accent-color;
-  color: $accent-font-color !important;
+  // color: $accent-font-color !important;
 }
 @mixin selected-style {
   $background-color: map-get($accent, 800);
@@ -39,6 +44,16 @@
   background: $background-color !important;
   color: $font-color !important;
 }
+
+@mixin container-flex-column {
+  margin: 0px;
+  flex-flow: column wrap;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  min-width: 100%;
+}
+
 
 @mixin footer {
   background-color:  map-get($primary, 800);

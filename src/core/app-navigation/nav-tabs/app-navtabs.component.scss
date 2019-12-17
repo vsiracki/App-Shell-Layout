@@ -1,1 +1,36 @@
 @import '../../../styles/mixin.scss';
+
+.navtabs-container{
+  nav {
+
+    color: white;
+      .toolbar-flex {
+        flex: 1 auto;
+        color: white;
+    }
+    .text {
+      @include primary-text-color;
+    }
+          .mat-tab-link {
+            opacity: 1 !important;
+          }
+          mat-icon{
+            @include primary-text-color;
+          }
+    }
+
+  .link:hover {
+    .text {
+      color: white;
+      cursor: pointer;
+    }
+      mat-icon{
+        color:white;
+      }
+  }
+
+  }
+
+
+
+

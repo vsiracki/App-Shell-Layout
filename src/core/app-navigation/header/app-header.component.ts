@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 
 
@@ -9,9 +9,14 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent{
 
+  @Output() SideNavigationToggle = new EventEmitter();
 
+  constructor(){}
 
-
+  onToggleOpenSidenav() {
+    // this.sidService.toggle();
+    this.SideNavigationToggle.emit();
+  }
 
 
 

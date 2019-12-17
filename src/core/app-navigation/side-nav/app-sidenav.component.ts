@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit } from '@angular/core';
+
 
 
 @Component({
@@ -8,8 +9,11 @@ import { Component } from '@angular/core';
 })
 export class SideNavComponent {
 
+  constructor() {}
+  @Output() closeNavigation = new EventEmitter();
 
-
-
+  onToggleClose() {
+    this.closeNavigation.emit();
+  }
 
 }

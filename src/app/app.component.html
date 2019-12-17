@@ -1,27 +1,37 @@
-<!-- Body container wraper! begin -->
-    <div class="layout">
+<mat-sidenav-container >
 
-        <!-- Navigation content goes here! begin-->
-        <div class="navigation">
-          <app-navigation></app-navigation>
-        </div>
-        <!-- Navigation content goes here! end-->
+  <mat-sidenav #sidenav>
+      <app-sidenav (closeSideNavigation)="sidenav.close()"></app-sidenav>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+      <div class="header">
+        <app-header (SideNavigationToggle)="sidenav.toggle()"></app-header>
+      </div>
+      <div class="tabs">
+        <app-navtabs></app-navtabs>
+      </div>
 
 
-        <div class="content">
+      <main class="content">
+        <router-outlet></router-outlet>
+      </main>
 
-          <!--Web Content goes here! begin-->
-          Web Content goes here!
-          <router-outlet></router-outlet>
-          <!--Web Content goes here! end-->
+      <footer class="footer">
+        <app-footer></app-footer>
+      </footer>
+   </mat-sidenav-content>
 
-        </div>
+</mat-sidenav-container>
 
-        <!-- Footer is here  begin-->
-        <div class="footer">
-          <app-footer></app-footer>
-        </div>
-        <!-- Footer is here end-->
-    </div>
-<!-- Body container wraper! end -->
+
+
+
+
+
+
+
+
+
+
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -7,5 +7,13 @@ import { Component } from '@angular/core';
     styleUrls:['./app-footer.component.scss']
 })
 export class FooterComponent {
+
+
+  @Output() SideNavigationToggle = new EventEmitter();
+
+  onToggleOpenSidenav() {
+    this.SideNavigationToggle.emit();
+  }
+
 
 }

@@ -1,26 +1,29 @@
 @import '../styles/mixin.scss';
 
 
-  .layout {
-    margin: 0px;
-    // flex-flow: column wrap;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+mat-sidenav-container {
+    @include container-flex-column;
 
+    mat-sidenav-content{
+      @include container-flex-column;
+        .content {
+          flex: 1;
+        }
+        .header {
+           @include primary-background-color ;
+           padding: 30px ;
+           color: white;
+        }
+        .tabs{
+          background-color: map-get($accent, 800);
+          color: white;
+        }
+    }
+    .footer {
+      @include footer;
+      padding: 50px ;
+      color: white;
   }
-  .content {
-    flex: 1;
-    margin: 0.5em;
-  }
-  .footer {
-    padding: 50px;
-    @include footer;
-    color: white;
-    // background-color: $primary;
-  }
-
-
-
+}
 
 
