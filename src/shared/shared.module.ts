@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from '../App-router/app-routing.module';
 import { AngularMaterialModule } from './material-Imports/angular-material.module';
-
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 
 @NgModule({
@@ -13,14 +13,16 @@ import { AngularMaterialModule } from './material-Imports/angular-material.modul
   imports: [ AppRoutingModule,
              NotFoundModule,
              FooterModule,
-             NavigationModule
+             NavigationModule,
+             FlexLayoutModule
              ],
   exports: [
              AngularMaterialModule,
              AppRoutingModule,
              NotFoundModule,
              FooterModule,
-             NavigationModule
+             NavigationModule,
+             FlexLayoutModule
 
             ]
 })

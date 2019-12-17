@@ -1,3 +1,4 @@
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { AngularMaterialModule } from '../../shared/material-Imports/angular-material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -11,7 +12,8 @@ import { AppRoutingModule } from 'src/App-router/app-routing.module';
 
 
 @NgModule({
-  imports: [ CommonModule, AngularMaterialModule, AppRoutingModule  ],
+
+    imports: [ CommonModule, AngularMaterialModule, AppRoutingModule,   FlexLayoutModule ],
   exports: [  NavigationComponent , HeaderComponent , NavTabsComponent, SideNavComponent],
   declarations: [ NavigationComponent , HeaderComponent, NavTabsComponent , SideNavComponent]
 })

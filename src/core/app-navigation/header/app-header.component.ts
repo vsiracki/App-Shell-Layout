@@ -11,6 +11,8 @@ export class HeaderComponent{
 
   @Output() SideNavigationToggle = new EventEmitter();
 
+  hideBox="true";
+
   constructor(){}
 
   onToggleOpenSidenav() {
