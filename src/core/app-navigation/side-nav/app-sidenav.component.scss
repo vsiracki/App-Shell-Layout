@@ -5,8 +5,8 @@
   padding-left: 15px;
 
 }
-.sidenav-list:hover{
-  @include primary-background-color;
+.sidenav-list:active{
+  @include selected-style;
 
       .text {
         color:white
