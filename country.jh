@@ -1,0 +1,47 @@
+entity Country {
+	countryId Long,
+	country String required,
+    lastUpdate String
+    
+}
+
+entity City {
+	cityId Long,
+    city String,    
+    countryId Country required,
+    lastUpdate String
+}
+
+entity Address {
+	addressId Long,
+	address String,
+    city City,
+    postCode Integer,
+    phone Integer,
+    lastUpdate String
+}
+
+
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Country to City{cityId}
+}
+relationship OneToMany {
+	City to Address{cityId}
+}
+
+
+
+paginate City, Address with infinite-scroll
+paginate Country with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
