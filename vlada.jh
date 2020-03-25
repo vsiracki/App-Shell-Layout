@@ -1,0 +1,156 @@
+entity Country {
+  country String required,
+  lastUpdate ZonedDateTime
+}
+
+entity City {
+    city String required,
+    lastUpdate ZonedDateTime
+}
+entity Address {
+    address1 String,
+    address2 String,   
+    postcode Integer ,
+    lastUpdate ZonedDateTime
+}
+
+entity Film {
+	title String required,
+    description Blob,
+    realseYear Integer max(4),
+    rentalDuration Integer,
+    rentalRate Integer,
+    length Integer,
+    replacmentCost Double,
+    rating Integer,
+    lastUpdate Instant,
+    specialFeatuers String,
+    fulltext String
+    
+}
+entity Actor {
+	firstName String,
+    lastName String,
+    lastUpdate Instant
+}
+entity FilmActor {
+	lastUpdate Instant
+}
+
+entity Language {
+	name String required,
+    lastUpdate Instant
+}
+entity Category {
+  name String required,
+  lastUpdate Instant
+}
+entity FilmCategory {
+	lastUpdate Instant
+}
+entity Inventory {
+	lastUpdate Instant
+}
+entity Rental {
+	rentalDate Instant,
+    returnDate Instant,
+    lastUpdate Instant
+}
+entity Payment {
+	amount Integer,
+    paymentDate Instant
+}
+entity Staff {
+	firstName String,
+    lastName String,
+    email String,
+    active Boolean,
+    username String,
+    password String,
+    lastUpdate Instant,
+    picture Blob
+}
+
+entity Store {
+	lastUpdate Instant
+}
+entity Customer {
+	firstName String,
+    lastName String,
+    email String,
+    activebool Boolean,
+    createDate Instant,
+    lastUpdate Instant,
+    active Boolean
+}
+
+relationship OneToMany {
+	Customer{rental} to Rental{customer}
+}
+relationship OneToMany {
+	Customer{payment} to Payment{customer}
+}
+relationship OneToMany {
+	Address{customer} to Customer{address}
+}
+relationship OneToMany {
+	Store{customer} to Customer{store}
+}
+
+relationship ManyToMany {
+	Staff{store} to Store{staff}
+}
+relationship OneToMany {
+	Staff{rental} to Rental{staff}
+}
+relationship OneToMany {
+	Address{store} to Store{address}
+}
+relationship OneToMany {
+	Address{staff} to Staff{address}
+}
+
+
+relationship OneToMany {
+	Rental{payment} to Payment{rental}
+}
+
+relationship OneToMany {
+	Inventory{rental} to Rental{inventory}
+}
+
+relationship OneToMany {
+	Film{inventory} to Inventory{film}
+}
+
+relationship OneToMany {
+	Film{film} to FilmCategory{film}
+}
+relationship OneToMany {
+	Category{category} to FilmCategory{category}
+}
+
+relationship OneToMany {
+    City{address} to Address{city}
+}
+relationship OneToMany {
+    Country{city} to City{country}
+}
+
+relationship OneToMany {
+  Film{film} to FilmActor{film}
+}
+
+relationship OneToMany {
+  Actor{actor} to FilmActor{actor}
+}
+relationship OneToMany {
+    Language{film} to Film{language}
+}
+
+
+
+
+
+paginate Country with pagination
+paginate Address with infinite-scroll
